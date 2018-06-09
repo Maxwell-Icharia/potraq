@@ -6,6 +6,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>POTRAQ | Live</title>
+        <link href="./resources/css/main.css" type="text/css" rel="stylesheet">
+        </link>
     </h:head>
     <h:body>
         <center>
@@ -14,6 +16,38 @@
         </center>
         <h:button id="home" value="Home" outcome="index.xhtml"></h:button>&nbsp;
         <h:button id="login" value="Login" outcome="login.xhtml"></h:button>
+        <br/><br/><br/>
+        <div class="login_form">
+            <h:form>
+                <h:outputLabel for="id_number">ID Number:     </h:outputLabel>
+                <h:inputText id="id_number" value=""></h:inputText>
+                <br/><br/><br/>
+                <h:outputLabel for="first_name">First Name:     </h:outputLabel>
+                <h:inputText id="first_name" value=""></h:inputText>
+                <br/><br/><br/>
+                <h:outputLabel for="surname">Surname:     </h:outputLabel>
+                <h:inputText id="surname" value=""></h:inputText>
+                <br/><br/><br/>
+                <h:outputLabel for="phone_number">Phone Number:     
+                </h:outputLabel>
+                <h:inputText id="phone_number" value=""></h:inputText>
+                <br/><br/><br/>
+                <h:outputLabel for="dob">Date of Birth:     </h:outputLabel>
+                <h:inputText id="dob" value=""></h:inputText>
+                <br/><br/><br/>
+                <h:outputLabel for="email">Email Address:     </h:outputLabel>
+                <h:inputText id="email" value=""></h:inputText>
+                <br/><br/><br/>
+                <h:outputLabel for="password">Password:     </h:outputLabel>
+                <h:inputSecret id="password" value=""></h:inputSecret>
+                <br/><br/><br/>
+                <h:outputLabel for="confirm_password">Confirm Password:     
+                </h:outputLabel>
+                <h:inputSecret id="confirm_password" value=""></h:inputSecret>
+                <br/><br/><br/>
+                <h:commandButton id="submit" value="Submit"></h:commandButton>
+            </h:form>
+        </div>
     </h:body>
 </html>
 
