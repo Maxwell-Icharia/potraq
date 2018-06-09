@@ -10,14 +10,18 @@
         </link>
     </h:head>
     <h:body>
-        <center>
-            <h1>Login</h1>
-            <hr/><br/><br/>
-        </center>    
-        <h:button id="home" value="Home" outcome="index.xhtml"></h:button>&nbsp;
-        <h:button id="signup" value="Signup" outcome="signup.xhtml"></h:button>
+        <div class="nav_bar">
+            <center>
+                <h1>Login</h1>
+                <hr/><br/><br/>    
+                <h:button id="home" value="Home" outcome="index.xhtml">
+                </h:button>&nbsp;
+                <h:button id="signup" value="Signup" outcome="signup.xhtml">
+                </h:button>
+            </center>
+        </div>
         <br/><br/><br/>
-        <div class="login_form">
+        <div class="form">
             <h:form>
                 <h:outputLabel for="id_number">ID Number:     </h:outputLabel>
                 <h:inputText id="id_number" value=""></h:inputText>
