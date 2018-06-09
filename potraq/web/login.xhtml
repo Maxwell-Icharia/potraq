@@ -1,9 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>POTRAQ | Live</title>
+        <link href="./resources/css/main.css" type="text/css" rel="stylesheet">
+        </link>
     </h:head>
     <h:body>
         <center>
@@ -12,6 +16,18 @@
         </center>    
         <h:button id="home" value="Home" outcome="index.xhtml"></h:button>&nbsp;
         <h:button id="signup" value="Signup" outcome="signup.xhtml"></h:button>
+        <br/><br/><br/>
+        <div class="login_form">
+            <h:form>
+                <h:outputLabel for="id_number">ID Number:     </h:outputLabel>
+                <h:inputText id="id_number" value=""></h:inputText>
+                <br/><br/><br/>
+                <h:outputLabel for="password">Password:     </h:outputLabel>
+                <h:inputSecret id="password" value=""></h:inputSecret>
+                <br/><br/><br/>
+                <h:commandButton id="submit" value="Submit"></h:commandButton>
+            </h:form>
+        </div>
     </h:body>
 </html>
 
