@@ -3,11 +3,11 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>POTRAQ | Live</title>
-        <link href="./resources/css/main.css" type="text/css" rel="stylesheet">
-        </link>
+        <h:outputStylesheet name="/css/main.css"/>
     </h:head>
     <h:body>
         <center>
@@ -15,10 +15,10 @@
             <h1>Population Tracker</h1>
             <hr/><br/><br/>
             <div class="nav_bar">
-            <h:button id="login" value="Login" outcome="login.xhtml">
-            </h:button>&nbsp;
-            <h:button id="signup" value="Signup" outcome="signup.xhtml">
-            </h:button>
+            <p:button id="login" value="Login" outcome="login.xhtml">
+            </p:button>&nbsp;
+            <p:button id="signup" value="Signup" outcome="signup.xhtml">
+            </p:button>
             </div>
         </center>
     </h:body>

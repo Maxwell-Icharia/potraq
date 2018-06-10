@@ -3,35 +3,39 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>POTRAQ | Live</title>
-        <link href="./resources/css/main.css" type="text/css" rel="stylesheet">
-        </link>
-        <link href="./resources/css/login.css" type="text/css" rel="stylesheet">
-        </link>
+        <h:outputStylesheet name="/css/main.css"/>
+        <h:outputStylesheet name="/css/login.css"/>
     </h:head>
     <h:body>
         <div class="nav_bar">
             <center>
                 <h1>Login</h1>
                 <hr/><br/><br/>    
-                <h:button id="home" value="Home" outcome="index.xhtml">
-                </h:button>&nbsp;
-                <h:button id="signup" value="Signup" outcome="signup.xhtml">
-                </h:button>
+                <p:button id="home" value="Home" outcome="index.xhtml">
+                </p:button>&nbsp;
+                <p:button id="signup" value="Signup" outcome="signup.xhtml">
+                </p:button>
             </center>
         </div>
         <br/><br/><br/>
         <div class="form">
             <h:form>
-                <h:outputLabel for="id_number">ID Number:     </h:outputLabel>
-                <h:inputText id="id_number" value=""></h:inputText>
-                <br/><br/><br/>
-                <h:outputLabel for="password">Password:     </h:outputLabel>
-                <h:inputSecret id="password" value=""></h:inputSecret>
-                <br/><br/><br/>
-                <h:commandButton id="submit" value="Submit"></h:commandButton>
+                <p:panelGrid id="panel" columns="2">
+                    <f:facet name="header">Login</f:facet>
+                    <h:outputLabel for="id_number">ID Number</h:outputLabel>
+                    <p:inputText id="id_number" value=""></p:inputText>
+                    
+                    <h:outputLabel for="password">Password</h:outputLabel>
+                    <p:password id="password" value=""></p:password>
+                    <f:facet name="footer">
+                        <p:commandButton id="submit" value="Submit"></p:commandButton>
+                    </f:facet>
+                </p:panelGrid>
             </h:form>
         </div>
     </h:body>
