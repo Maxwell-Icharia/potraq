@@ -1,11 +1,23 @@
+html{
+    color: darkslategray;
+}
+
 h1{
     color: blue;
 }
 
-.form{
+form{
     color: firebrick;
+    position: absolute;
+    size: auto;
+    top: 250px;
+    left: 500px;
+    background-color: olive;
 }
-
 .nav_bar{
     color: saddlebrown;
+}
+
+#submit{
+    position: absolute;
 }
