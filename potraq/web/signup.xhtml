@@ -15,50 +15,65 @@
         <div class="nav_bar">
             <center>
                 <h1>Register</h1>
-                <hr/><br/><br/>
-            <p:button id="home" value="Home" outcome="index.xhtml"></p:button>&nbsp;
+                <p:separator/>
+                <p:spacer height="15"/>
+            <p:button id="home" value="Home" outcome="home.xhtml"></p:button>&nbsp;
             <p:button id="login" value="Login" outcome="login.xhtml"></p:button>
             </center>
         </div>
-        <br/><br/><br/>
+        <p:spacer height="15"/>
+        <p:separator/>
         <div class="form">
-            <h:form>
-                <p:growl id="notify" sticky="true" showDetail="true"></p:growl>
-                <p:panelGrid id="panel" columns="2">
-                    <f:facet name="header">Register</f:facet>
-                    <h:outputLabel for="id_number">ID Number</h:outputLabel>
-                    <p:inputText id="id_number" value=""></p:inputText>
+            <h:form id="register">
+                <p:growl id="growl" sticky="false" life="5000" showDetail="true" showSummary="true"/>
+                <h:panelGrid id="panel" columns="2">
+                    <p:outputLabel for="id_number" value="ID Number"/>
+                    <p:inputText id="id_number" value="#{User.id_number}">
+                        <f:validateLength minimum="8" maximum="8"/>
+                    </p:inputText>
                     
-                    <h:outputLabel for="first_name">First Name</h:outputLabel>
-                    <p:inputText id="first_name" value=""></p:inputText>
+                    <p:outputLabel for="first_name" value="First Name"/>
+                    <p:inputText id="first_name" value="#{User.first_name}">
+                    </p:inputText>
                     
-                    <h:outputLabel for="surname">Surname</h:outputLabel>
-                    <p:inputText id="surname" value=""></p:inputText>
+                    <p:outputLabel for="surname" value="Surname"/>
+                    <p:inputText id="surname" value="#{User.surname}">
+                    </p:inputText>
                     
-                    <h:outputLabel for="phone_number">Phone Number
-                    </h:outputLabel>
-                    <p:inputText id="phone_number" value=""></p:inputText>
+                    <p:outputLabel for="phone_number" value="Phone Number"/>
+                    <p:inputText id="phone_number" value="#{User.phone_number}">
+                    </p:inputText>
                     
-                    <h:outputLabel for="gender">Gender</h:outputLabel>
-                    <p:inputText id="gender" value=""></p:inputText>
+                    <p:outputLabel for="gender" value="Gender"/>
+                    <p:selectOneRadio id="gender" value="#{User.gender}">
+                        <f:selectItem itemLabel="Male" itemValue="Male"/>
+                        <f:selectItem itemLabel="Female" itemValue="Female"/>
+                    </p:selectOneRadio>
                     
-                    <h:outputLabel for="dob">Date of Birth</h:outputLabel>
-                    <p:inputText id="dob" value=""></p:inputText>
+                    <p:outputLabel for="dob" value="Date of Birth"/>
+                    <p:calendar id="dob" value="#{User.dob}" maxdate="18/06/02" navigator="true">
+                    </p:calendar>
                     
-                    <h:outputLabel for="email">Email Address</h:outputLabel>
-                    <p:inputText id="email" value=""></p:inputText>
+                    <p:outputLabel for="email" value="Email Address"/>
+                    <p:inputText id="email" value="#{User.email}"></p:inputText>
                     
-                    <h:outputLabel for="password">Password</h:outputLabel>
-                    <p:password id="password" value=""></p:password>
+                    <p:outputLabel for="password" value="Password"/>
+                    <p:password id="password" value="#{User.password}" 
+                                feedback="true" inline="true" match="confirm_password">
+                    </p:password>
                     
-                    <h:outputLabel for="confirm_password">Confirm Password
-                    </h:outputLabel>
-                    <p:password id="confirm_password" value=""></p:password>
+                    <p:outputLabel for="confirm_password" value="Confirm Password"/>
+                    <p:password id="confirm_password" 
+                                value="#{User.confirm_password}">
+                    </p:password>
                     
-                    <f:facet name="footer">
-                    <p:commandButton id="submit" value="Submit"></p:commandButton>
-                    </f:facet>
-                </p:panelGrid>
+                </h:panelGrid>
+                
+                <p:commandButton id="submit" value="Submit" 
+                                actionListener="#{User.checkData}" 
+                                update="register" icon="ui-icon-check">
+               </p:commandButton>
+                
             </h:form>
         </div>
     </h:body>
