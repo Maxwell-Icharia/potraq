@@ -8,22 +8,6 @@ import java.sql.SQLException;
 public class DBConnect {
     
     public DBConnect(){
-        
-        try{
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-        }catch(SQLException e){
-            System.out.println("SQL Exception Error" + "\n\n" + e);
-        }catch(ClassNotFoundException e){
-            System.out.println("Class Exception Error" + "\n\n" + e);
-        }finally{
-            if(this.conn != null){
-                System.out.println("Connection Successful!");
-            }else{
-                System.out.println("Connection Failed!");
-            }
-        }
-        
     }
     
     // JDBC driver name and database URL
@@ -35,6 +19,29 @@ public class DBConnect {
     static final String PASS = "test";
     
     // DB Connection Variable As null
-    Connection conn = null;
+    Connection con = null;
+
+    public Connection connect(){
+        
+        if(con == null){
+            try{
+                Class.forName(JDBC_DRIVER);
+                con = DriverManager.getConnection(DB_URL, USER, PASS);
+            }catch(SQLException e){
+                System.out.println("SQL Exception Error" + "\n\n" + e);
+            }catch(ClassNotFoundException e){
+                System.out.println("Class Exception Error" + "\n\n" + e);
+            }finally{
+                if(this.con != null){
+                    System.out.println("Connection Successful!");
+                }else{
+                    System.out.println("Connection Failed!");
+                }
+            }
+
+            return con;
+        }
+        return null;
+    }
     
 }
