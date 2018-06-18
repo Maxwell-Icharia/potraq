@@ -7,12 +7,12 @@ h1{
 }
 
 form{
-    color: firebrick;
+/*    color: firebrick;
     position: absolute;
     size: auto;
     top: 250px;
     left: 500px;
-    background-color: olive;
+    background-color: olive;*/
 }
 .nav_bar{
     color: saddlebrown;
